@@ -1,0 +1,30 @@
+﻿<!--<script>
+        var colorarray = ['#049cdb', '#46a546', '#f89406', '#c3325f', '#7a43b6', '#c09853', '#b94a48', '#3a87ad', '#e7a61a'];
+</script>-->
+
+<section id="work-view" class="work-panel" data-ng-controller="work as vm">
+    <fixed-header>
+
+        <h1 class="center-block text-center section-title"><i class="fa fa-laptop fa-1x text-center center-block hidden-sm hidden-xs"></i><br />{{::vm.pageheader}}</h1>
+    <hr class="line" />
+        </fixed-header>
+
+    <movable-content>
+        <div class="work-container row">       
+                <div class="col-md-12">
+                    <ul>
+                        <li class="work-tile col-md-4 col-xs-12 img-responsive" data-ng-click="vm.Overlay(u.id)" data-ng-repeat="u in vm.Work">
+                            <a href="/work/{{u.url}}">
+                                <img class="image-thumbnail img-responsive" ng-src={{u.ImgURL}} />
+                                <div class="img-overlay center-block text-center">
+                                    <i class="fa fa-eye"></i>
+                                    <br />
+                                    <strong>View details for {{u.title}}</strong>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+        </div>
+    </movable-content>
+</section>

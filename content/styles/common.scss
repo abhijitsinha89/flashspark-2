@@ -1,0 +1,42 @@
+@import 'default';
+
+html, button, input, select, textarea,
+.pure-g [class *= "pure-u"] {
+    font-family: $regular-text-font;
+ }
+
+body {
+    width:100%;
+    height:100%;
+    margin:0;
+      -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+    -webkit-font-smoothing: antialiased;
+    background-color: #ffffff;
+}
+
+.fs-logo {
+    background: none repeat scroll 0 0 #0091EA;
+    border: 15px solid #0091EA;
+    color: #fff;
+    font-size: 6em;
+    border-radius : 50%;
+    left: 8%;
+    position: absolute;
+    top: 15px;
+    z-index: 6;
+    transition: 1s all linear;
+}
+.fs-logo:hover {
+    color:#ffd700;
+    cursor: pointer;
+    transition: 1s all linear;
+}
+
+.fs-header-name {
+    padding : 10% 0 0 2%;
+    font-size : 2.5em;
+    font-family: $regular-text-font;
+    color : #222;
+
+}

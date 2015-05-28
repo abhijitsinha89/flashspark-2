@@ -1,0 +1,16 @@
+﻿<section id="dashboard-view" class="about-panel center-block" data-ng-controller="inspire as vm">
+    <fixed-header>
+
+        <h1 class="center-block text-center section-title"><i class="fa fa-user fa-1x text-center hidden-sm hidden-xs"></i><br />{{::vm.pageheader}}</h1>
+        <hr class="line" />
+    </fixed-header>
+    <movable-content>
+        <div class="inspire">
+            <div id="inspire-panel">
+                <div data-ng-repeat="s in vm.inspire">
+                   
+                </div>
+            </div>
+        </div>
+        </movable-content>
+</section>

@@ -1,0 +1,36 @@
+﻿<section id="work-view" class="article-panel" data-ng-controller="workDetails as vm">
+    <fixed-header>
+        <h1 class="center-block text-center section-title"><i class="fa fa-laptop fa-1x text-center hidden-sm hidden-xs"></i><br />{{::vm.pageheader}}</h1>
+        <hr class="line" />
+    </fixed-header>
+    <movable-content>
+        <div class="row">
+            <div class="col-md-9 col-sm-9 article-body-panel center-block">
+                <div>
+                    <br />
+                    <p class="overlay-work-url" data-ng-bind-html="vm.trustAsHtml(vm.workDetails.URL)"></p>
+                    <div class="row">
+                        <img ng-src={{vm.workDetails.ImgURL}} class="col-md-6 overlay-work-img img-responsive" />
+                        <p class="col-md-6 overlay-work-description" data-ng-bind-html="vm.trustAsHtml(vm.workDetails.Description)"></p>
+                    </div>
+                </div>
+
+                <hr />
+                <div class="row">
+                    <div class="col-md-12">
+                        <a href="/work"><i class="fa fa-laptop fa-1x text-center"></i> &nbsp Back to Work Details</a>
+                    </div>
+                </div>
+                <hr />
+            </div>
+
+            <div class="comment-box col-md-9 col-sm-9">
+                <dir-disqus disqus-shortname="flashspark"
+                            disqus-identifier={{s.Title}}
+                            disqus-url="http://flashspark.in/{{ vm.url }}"
+                            ready-to-bind="true">
+                </dir-disqus>
+            </div>
+        </div>
+    </movable-content>
+</section>

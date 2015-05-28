@@ -1,0 +1,16 @@
+/*
+Theme Name: Flash Spark
+Theme URI: http://flashspark.in;
+Description: FS
+Author: FS
+Author URI: http://flashspark.in
+Version: 1.0
+Tags: responsive, white, angularjs , wp-api
+
+License: Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)
+License URI: http://creativecommons.org/licenses/by-sa/3.0/
+
+*/
+
+@import url('build/vendor/vendorcss.min.css');
+@import url('build/app/app.min.css');

@@ -1,0 +1,18 @@
+﻿
+@font-face {
+    font-family: "bulbpack";
+    font-style: normal;
+    font-weight: normal;
+    src: url("../fonts/bulbpack.eot?#iefixh75abl") format("embedded-opentype"), url("../fonts/bulbpack.woff?h75abl") format("woff"), url("../fonts/bulbpack.ttf?h75abl") format("truetype"), url("../fonts/bulbpack.svg?h75abl#bulbpack") format("svg");
+}
+[class^="bulb-"], [class*=" bulb-"] {
+    font-family: "bulbpack";
+    font-style: normal;
+    font-variant: normal;
+    font-weight: normal;
+    line-height: 1;
+    text-transform: none;
+}
+.bulb-mybulb:before {
+    content: "";
+}

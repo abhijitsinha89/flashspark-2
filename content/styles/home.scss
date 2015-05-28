@@ -1,0 +1,32 @@
+@import 'default';
+
+.fs-home {
+    font-family :$regular-text-font;
+
+    .fs-grey-box {
+    background: #ffffff;
+    position: absolute;
+    z-index: -1;
+    height: 100%;
+    width: 40%;
+    left: 0;
+    top: 0;
+    margin-top: 0;
+    font-size : 1.3em;
+    padding : 15% 0 0 2%;
+    text-align: justify;
+    text-justify: inter-word;
+    }
+
+    .fs-article-heading {
+        text-decoration : underline;
+        text-transform: uppercase;
+        transition: .75s all linear;
+
+        &:hover {
+            background : #009688;
+            color : white;
+            transition: .75s all linear;
+        }
+    }
+}
