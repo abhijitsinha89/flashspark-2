@@ -6,11 +6,13 @@
             <a href="{{r.urlPath}}" data-ng-bind-html="r.config.settings.content" class="fs-nav-link"></a>
         </li>
     </ul>
-
-    <!-- <ul>
-        <li ng-repeat="category in vm.categories">
-            <a href="categories/{{category.slug}}" ng-bind-html="category.name"></a>
-            <div ng-bind-html="post.excerpt"></div>
-        </li>
-    </ul> -->
+    <div class="fs-categories">
+        <span>WHAT I WRITE ON : </span>
+        <ul>
+            <li ng-repeat="category in vm.categories">
+                <a href="categories/{{category.slug}}" ng-bind-html="category.name"  class="fs-nav-link"></a>
+                <div ng-bind-html="post.excerpt"></div>
+            </li
+        </ul>
+    </div>
 </nav>

@@ -21,7 +21,7 @@ body {
     color: #fff;
     font-size: 6em;
     border-radius : 50%;
-    left: 8%;
+    left: 7%;
     position: absolute;
     top: 15px;
     z-index: 6;
@@ -34,9 +34,17 @@ body {
 }
 
 .fs-header-name {
-    padding : 10% 0 0 2%;
-    font-size : 2.5em;
+    padding : 8% 0 0 2%;
+    font-size : 2.7em;
     font-family: $regular-text-font;
     color : #222;
-
+    z-index : 1;
 }
+.fs-grey-box {
+        width:100%;
+        position : relative;
+        height:40%;
+        background : #F5f5f5;
+        top:0;
+        left:0;
+    }
