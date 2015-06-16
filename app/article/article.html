@@ -1,0 +1,13 @@
+<section data-ng-controller="Article as vm">
+      <h1 class="center-block text-center section-title"><i class="fa fa-book fa-1x text-center hidden-sm hidden-xs"></i><br />{{::vm.pageheader}}</h1>
+    <hr class="line" />
+    <img ng-src="{{vm.article.featured_image.guid}}" />
+    <div ng-bind-html="vm.trustAsHtml(vm.article.content)"></div>
+    <div class="comment-box col-md-9 col-sm-9">
+        <dir-disqus disqus-shortname="flashspark"
+                    disqus-identifier={{vm.article.slug}}
+                    disqus-url="http://flashspark.in/journal/{{vm.article.slug}}"
+                    ready-to-bind="true">
+        </dir-disqus>
+    </div>
+</section>

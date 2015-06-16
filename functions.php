@@ -31,4 +31,6 @@ function includeurl()
 
 remove_action('template_redirect', 'redirect_canonical');
 
+add_theme_support('post-thumbnails');
+
 ?>

@@ -1,9 +1,9 @@
-app.controller('Article', ['$scope', '$http','$routeParams', function($scope, $http,$routeParams) {
-    var vm = this,
-        ArticleSlug = $routeParams.article;
+app.controller('Journal', ['$scope', '$http','$sce', function($scope, $http,$sce) {
+    var vm = this;
+        vm.pageheader = "A pinch of salt and some nimbu paani";
+        vm.trustAsHtml = $sce.trustAsHtml;
 
-    $http.get('wp-json/posts/?filter[name]=' + $routeParams.article).success(function(data){
-        vm.article = data[0];
-        vm.author = data[0].author;
+    $http.get('wp-json/posts?type[]=post&sfilter[orderby]=date_gmt&filter[posts_per_page]=5').success(function(data){
+        vm.articles = data;
     });
 }]);

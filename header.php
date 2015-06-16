@@ -11,10 +11,9 @@
         <meta name="keywords" content="abhijit sinha, ui design, ui designer, user interface, web design,portfolio, javascript, angularjs, bootstrap, hyderabad, UI, UX, Engineer" />
         <meta name="author" content="Abhijit Sinha - www.flashspark.in" />
 	<?php wp_head(); ?>
-    <link href='http://fonts.googleapis.com/css?family=Inconsolata' rel='stylesheet' type='text/css'>
      <link href="<?php bloginfo('stylesheet_url');?>" rel="stylesheet">
 </head>
-	<header class="">
+	<header class="fs-header">
 		<div>
              <a href="/"><i class="bulb-mybulb fs-logo"></i></a>
         </div>

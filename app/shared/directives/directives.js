@@ -3,24 +3,6 @@
 
     var app = angular.module('app');
 
-    app.directive('setcleanurl', ['config', function (config) {
-            return {
-                restrict: 'A',
-                require: 'ngModel',
-                replace: true,
-                scope: { props: '=parseUrl', ngModel: '=ngModel',text: '@text', flag:'@flag' },
-                link: function compile(scope, element, attrs, controller) {
-                    scope.$watch('ngModel', function (value) {
-                        var lower = value.replace(/\s+/g, '-').replace(',', '').replace(':', '').toLowerCase();
-                        if(scope.flag == 1)
-                            var final = lower.replace(lower, '<a href= /journal/' + lower + '>' + scope.text + '</a>');
-                        else
-                            var final = lower.replace(lower, '<a href= /journal/' + lower + '>' + scope.text + ' <i class="fa fa-caret-right"></i></a>');
-                        element.html(final);
-                    });
-                }
-            };
-    }]);
     app.directive('dirDisqus', ['$window', function($window) {
         return {
             restrict: 'E',
@@ -130,24 +112,23 @@
         };
     });
 
-    //app.service("getWorkData", function () {
-
-    //    var _workID = {};
-
-    //    return {
-    //        getworkID: function () {
-    //            return _workID;
-    //        },
-    //        setworkID: function (value) {
-    //            _workID = value;
-    //        }
-    //    };
-
-    //});
-
     app.filter('unsafe', function ($sce) {
         return function (val) {
             return $sce.parseAsHtml($sce.HTML,val);
         };
-    })
+    });
+
+    app.directive('replaceReadMore', [function () {
+        return  {
+            restrict: 'A',
+            scope: {url: '@url'},
+            link : function compile(scope, element, attr) {
+                attr.$observe('replaceReadMore', function (value) {
+                    var readMoreURL = '<a href="'+  scope.url +'">Read More <i class="fa fa-caret-right"></i></a>'
+                    var newHTML = value.replace('[&hellip;]', readMoreURL);
+                    element.html(newHTML);
+                });
+            }
+        }
+    }]);
 })();

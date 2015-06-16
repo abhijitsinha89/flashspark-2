@@ -88,6 +88,7 @@ function getRoutes() {
         },
         {
             url: '/journal/:article',
+            urlPath:'journal/:article',
             config: {
                 templateUrl: myLocalized.partials + '/article/article.html',
                 title: 'article'
@@ -95,6 +96,7 @@ function getRoutes() {
         },
         {
             url: '/projects/:project',
+            urlPath:'projects/:project',
             config: {
                 templateUrl: myLocalized.partials + '/project/project.html',
                 title: 'article'

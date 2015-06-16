@@ -1,13 +1,14 @@
-<section data-ng-controller="Article as vm">
-    <img ng-src="{{vm.article.featured_image}}"  />
-    <h1 ng-bind-html="vm.article.title"></h1>
-    <div ng-bind-html="vm.article.content"></div>
-    <h3>ABOUT AUTHOR:</h3>
-    <div>
-        <img src="{{vm.author.avatar}}" />
-        <a href="{{vm.author.meta.links.self}}">{{vm.author.first_name}} {{vm.author.last_name}}</h3></a>
-        <p>{{vm.author.nickname}}</p>
-        <p ng-bind-html="vm.author.description"></p>
-        <a href="{{vm.author.URL}}" target=_blank>{{vm.author.URL}}</a>
-    </div>
+<section data-ng-controller="Journal as vm">
+     <h1 class="center-block text-center section-title"><i class="fa fa-book fa-1x text-center hidden-sm hidden-xs"></i><br />{{::vm.pageheader}}</h1>
+        <hr class="line" />
+    <ul>
+        <li data-ng-repeat="article in vm.articles">
+            <a href="journal/{{article.slug}}">
+                <span data-ng-bind-html="vm.trustAsHtml(article.title)">
+                </span>
+            </a>
+            <div replace-read-more={{vm.trustAsHtml(article.excerpt)}}
+              url="journal/{{article.slug}}"></div>
+        </li>
+    </ul>
 </section>

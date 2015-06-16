@@ -28,7 +28,7 @@ gulp.task('vendormodules',function(){
 });
 
 gulp.task('appmodules',function () {
-  var vendorjs = [
+  var appjs = [
     './app/app.js',
     './app/config.route.js',
     './app/shared/directives/*.js',
@@ -37,7 +37,7 @@ gulp.task('appmodules',function () {
     './app/**/*.js'
   ];
 
-  gulp.src(vendorjs,{base:'./bower_components/'}).pipe(concat('app.min.js')).pipe(gulp.dest('build/app/')).pipe(notify({
+  gulp.src(appjs,{base:'./bower_components/'}).pipe(concat('app.min.js')).pipe(gulp.dest('build/app/')).pipe(notify({
     message:"app scripts have been processed"
   }));
 });
