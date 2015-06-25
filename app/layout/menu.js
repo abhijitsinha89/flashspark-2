@@ -8,8 +8,7 @@
         vm.openmenu = false;
         activate();
         function activate() {
-            getNavRoutes();
-            getCategoriesData();
+            getNavRoutes(); 
         }
         function getNavRoutes() {
             vm.navRoutes = routes.filter(function (r) {
@@ -25,12 +24,6 @@
             }
             var menuName = route.config.title;
             return $route.current.title.substr(0, menuName.length) === menuName ? 'current' : '';
-        }
-
-        function getCategoriesData() {
-            $http.get('wp-json/taxonomies/category/terms').success(function(data){
-                vm.categories = data;
-            });
         }
     };
 

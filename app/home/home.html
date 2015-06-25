@@ -1,14 +1,14 @@
 <section   data-ng-controller="Home as vm"  class="fs-home">
-    <div class="pure-g">
+    <div class="row">
         
     </div>
-    <div class="pure-g">
-        <div class=" pure-u-1-2 fs-recent-post">
+    <div class="row">
+        <div class=" col-md-6 fs-recent-post">
             <h3>LAST WROTE :</h3>
             <span class="fs-article-heading">{{vm.journal.title}}</span>
             <p data-ng-bind-html ="vm.journal.excerpt"></p>
         </div>
-        <div class="pure-u-1-2 fs-recent-project">
+        <div class="col-md-6 fs-recent-project">
             <h3>LAST SEEN WORKING ON :</h3>
             <span  class="fs-article-heading">{{vm.project.title}}</span>
             <p data-ng-bind-html="vm.project.excerpt"></p>

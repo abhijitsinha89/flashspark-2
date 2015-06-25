@@ -33,4 +33,17 @@ remove_action('template_redirect', 'redirect_canonical');
 
 add_theme_support('post-thumbnails');
 
+add_action('admin_menu', 'my_remove_sub_menus');
+
+function my_remove_sub_menus() {
+    remove_submenu_page('edit.php', 'edit-tags.php?taxonomy=category');
+    remove_submenu_page('edit.php', 'edit-tags.php?taxonomy=post_tag');
+}
+
+// REMOVE POST META BOXES
+function remove_my_post_metaboxes() {
+  remove_meta_box( 'categorydiv','post','normal' ); // Categories Metabox
+  remove_meta_box( 'tagsdiv-post_tag','post','normal' ); // Tags Metabox
+}
+add_action('admin_menu','remove_my_post_metaboxes');
 ?>

@@ -1,9 +1,8 @@
 @import 'default';
 
-html, button, input, select, textarea,
-.pure-g [class *= "pure-u"] {
-    font-family: $regular-text-font;
- }
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak, .ng-hide {
+    display: none !important;
+}
 
 body {
     width:100%;
@@ -36,18 +35,64 @@ body {
 .fs-header-name {
     padding : 8% 0 0 2%;
     font-size : 2.7em;
-    font-family: $regular-text-font;
+    font-family: $header-font;
     color : #222;
     z-index : 1;
 }
 .fs-grey-box {
-        width:100%;
-        position : relative;
-        height:40%;
-        background : #F5f5f5;
-        top:0;
-        left:0;
-    }
-.fs-header {
-    position : absolute;
+    width:100%;
+    position : relative;
+    height:40%;
+    background : #F5f5f5;
+    top:0;
+    left:0;
+}
+
+.fs-border-left {
+    border-left : 1px solid $border-color;
+}
+
+.fs-border-right {
+    border-right : 1px solid $border-color;
+}
+
+.fs-border-top {
+    border-top : 1px solid $border-color;
+}
+
+.fs-border-bottom {
+    border-bottom : 1px solid $border-color;
+}
+
+.fs-all-border {
+    border : 1px solid $border-color;
+}
+
+.fs-uppercase {
+  text-transform: uppercase;
+}
+
+.fs-trasparent-button {
+   border-bottom: 1px solid rgb(87, 173, 104);
+  padding: 12px 10px;
+  vertical-align: middle;
+  line-height: 1.5em;
+  text-align: center;
+  transition : 0.8s all linear;
+  text-transform : capitalize;
+}
+
+.fs-trasparent-button:hover {
+    background-color : rgb(87, 173, 104);
+    color : #fff;
+    transition : 0.8s all linear;
+}
+
+.fs-inline-tag-button {
+    display: inline;
+  border: 1px solid rgb(87, 173, 104);
+  padding: 15px;
+  line-height: 0;
+  vertical-align: middle;
+  float : left;
 }

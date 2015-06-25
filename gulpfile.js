@@ -47,7 +47,7 @@ gulp.task('vendorcss', function () {
     './bower_components/angular/angular-csp.css',
     './bower_components/font-awsome/css/font-awesome.css',
       './content/styles/*.css',
-    './bower_components/pure/*.css'
+    './bower_components/bootstrap/dist/css/bootstrap.min.css'
     ];
      gulp.src(vendorcss).pipe(minifyCSS()).pipe(concat('vendorcss.min.css'))
      .pipe(gulp.dest('build/vendor')).pipe(notify({
@@ -59,6 +59,13 @@ gulp.task('fonts-vendor',function(){
 
   gulp.src('./bower_components/font-awsome/fonts/*',{base:'./bower_components/font-awsome/'}).pipe(gulp.dest('build/')).pipe(notify({
     message:"fonts have been loaded"
+  }));
+});
+
+gulp.task('fonts-bootstrap',function(){
+
+  gulp.src('./bower_components/bootstrap/fonts/*',{base:'./bower_components/bootstrap/'}).pipe(gulp.dest('build/')).pipe(notify({
+    message:"bootstrap fonts have been loaded"
   }));
 });
 
@@ -87,4 +94,4 @@ gulp.watch('./content/styles/*.scss',function(){
 });
 
 
-gulp.task('default', ['vendormodules', 'vendorcss', 'appmodules','fonts-custom','fonts-vendor','sass','watch']);
+gulp.task('default', ['vendormodules', 'vendorcss', 'appmodules','fonts-custom','fonts-vendor','fonts-bootstrap' , 'sass' , 'watch']);

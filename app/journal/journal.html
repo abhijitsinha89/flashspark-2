@@ -1,14 +1,57 @@
-<section data-ng-controller="Journal as vm">
-     <h1 class="center-block text-center section-title"><i class="fa fa-book fa-1x text-center hidden-sm hidden-xs"></i><br />{{::vm.pageheader}}</h1>
-        <hr class="line" />
-    <ul>
-        <li data-ng-repeat="article in vm.articles">
-            <a href="journal/{{article.slug}}">
-                <span data-ng-bind-html="vm.trustAsHtml(article.title)">
+<section data-ng-controller="Journal as vm"  class="container-fluid fs-journal">
+     <h1 class="center-block text-center section-title"><i class="fa-1x text-center hidden-sm hidden-xs"></i><br />{{::vm.pageheader}}</h1>
+    <hr />
+    <div  class="row">
+        <div class="col-md-8">
+            <ul>
+                <li data-ng-repeat="article in vm.articles" class="text-center" class="fs-journal-excerpt">
+                    <a href="journal/{{article.slug}}">
+                        <h2 data-ng-bind-html="vm.trustAsHtml(article.title)" class="fs-uppercase fs-border-top fs-border-bottom fs-journal-excerpt-title">
+                        </h2>
+                        <p>{{ article.date |  date : mediumDate }}</p>
+                    <img data-ng-src="{{article.featured_image.guid}}"  class="fs-journal-post-image"/>
+                    <div replace-read-more={{vm.trustAsHtml(article.excerpt)}}
+                      url="journal/{{article.slug}}" class="fs-journal-post-excerpt">
+                  </div>
+                    </a>
+                    <hr class="fs-journal-post-line" />
+                </li>
+            </ul>
+            <div class="fs-journal-pagination text-center" ng-cloak>
+                <span  data-ng-click="vm.pagination(1)"
+                 class="fs-journal-pagination-count  badge fs-all-border">
+                    <i class="fa fa-chevron-left"></i>
                 </span>
-            </a>
-            <div replace-read-more={{vm.trustAsHtml(article.excerpt)}}
-              url="journal/{{article.slug}}"></div>
-        </li>
-    </ul>
+                <span data-ng-repeat="page in vm.totalPages" data-ng-click="vm.pagination(page)"
+                data-ng-class="{ active : vm.activePage == page }" class="fs-journal-pagination-count  badge fs-all-border">
+                    {{page}}
+                </span>
+                <span  data-ng-click="vm.pagination(vm.pagination.last)"
+                 class="fs-journal-pagination-count  badge fs-all-border">
+                    <i class="fa fa-chevron-right"></i>
+                </span>
+            </div>
+        </div>
+        <div class="col-md-4  fs-journal-sidebar">
+            <div class="row">
+                <div class="col-md-12">
+                    <span class="center-block fs-border-top fs-border-bottom fs-sidebar-header">CATEGORIES</span>
+                    <ul class="fs-categories">
+                        <li ng-repeat="cat in vm.categories" class="fs-trasparent-button
+                        center-block" data-ng-click=openCategory(cat.name)>
+                            <i class="glyphicon glyphicon-pushpin"> </i> {{cat.name}}
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-12">
+                     <span class="center-block fs-border-top fs-border-bottom fs-sidebar-header">TAGS</span>
+                    <div class="fs-tags row">
+                        <span ng-repeat="tag in vm.tags" class="fs-inline-tag-button" data-ng-click=openTag(tag.name)>
+                            {{tag.name}}
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </section>

@@ -6,19 +6,21 @@ $me: #AB47BC;
 $inspirations: #FF7043;
 $contact: #FDD835;
 $header: #ff5252;
+$alternate-background-theme: rgb(250, 250, 250);
+$border-color: rgba(0,0,0,0.1);
+$text-color : #333;
+
 /*FONTS*/
 $regular-text-font: "Inconsolata";
 $pure-text-font: "Georgia, Times, "Times New Roman", serif";
+$header-font :  "Londrina Outline", "serif";
 
 /*------------------------------------*/
 li {
     list-style-type : none;
 }
 
-a {
+a, a:hover {
     text-decoration : none;
-}
-
-h1, h2 , h3 , h4 , h5 , h6 {
-    color : #ff5252
+    color : $text-color;
 }

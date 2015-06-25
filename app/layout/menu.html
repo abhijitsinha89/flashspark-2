@@ -1,4 +1,4 @@
-<nav data-ng-controller="menu as vm"  data-ng-class="{'fs-home': location.path() == '/'}"  class="  fs-menu">
+<nav data-ng-controller="menu as vm"  data-ng-class="{'fs-home': location.path() === '/'}"  class="  fs-menu hidden">
     <h3>MENU</h3>
     <ul class="fs-nav">
         <li class="nav-animation" data-ng-class="vm.isCurrent(r)"
@@ -6,7 +6,7 @@
             <a href="{{r.urlPath}}" data-ng-bind-html="r.config.settings.content" class="fs-nav-link"></a>
         </li>
     </ul>
-    <div class="fs-categories">
+    <div class="fs-categories" data-ng-if="location.path() !== '/'">
         <span>WHAT I WRITE ON : </span>
         <ul class="">
             <li ng-repeat="category in vm.categories">
