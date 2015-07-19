@@ -124,7 +124,7 @@
             scope: {url: '@url'},
             link : function compile(scope, element, attr) {
                 attr.$observe('replaceReadMore', function (value) {
-                    var readMoreURL = '.<br /><br /><a href="'+  scope.url +'">Read More about this....<i class="fa fa-send" class="fs-border-bottom"></i></a>'
+                    var readMoreURL = '.<br /><br /><a href="'+  scope.url +'">Read more about this....<i class="fa fa-send" class="fs-border-bottom"></i></a>'
                     var newHTML = value.replace('[&hellip;]', readMoreURL);
                     element.html(newHTML);
                 });

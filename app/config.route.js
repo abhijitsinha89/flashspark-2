@@ -33,7 +33,7 @@ function getRoutes() {
                 templateUrl: myLocalized.partials + '/journal/journal.html',
                 settings: {
                     nav: 1,
-                    content: '<i class="fa fa-book"></i> <br />Journal'
+                    content: '<span><i class="fa fa-book"></i><span class="nav-name">Journal</span></span>'
                 }
             }
         },
@@ -45,7 +45,7 @@ function getRoutes() {
                 templateUrl: myLocalized.partials + '/projects/projects.html',
                 settings: {
                     nav: 2,
-                    content: '<i class="fa fa-book"></i> <br />Projects'
+                    content: '<span><i class="fa fa-book"></i><span class="nav-name">Projects</span></span>'
                 }
             }
         },
@@ -57,7 +57,7 @@ function getRoutes() {
                 title: 'me',
                 settings: {
                     nav: 3,
-                    content: '<i class="fa fa-book"></i> <br />Me'
+                    content: '<span><i class="fa fa-book"></i><span class="nav-name">Me</span></span>'
                 }
             }
         },
@@ -69,7 +69,7 @@ function getRoutes() {
                 title: 'inspirations',
                 settings: {
                     nav: 4,
-                    content: '<i class="fa fa-book"></i> <br />Inspirations'
+                    content: '<span><i class="fa fa-book"></i><span class="nav-name">Inspirations</span></span>'
                 }
             }
         }
@@ -82,7 +82,7 @@ function getRoutes() {
                 title: 'contact',
                 settings: {
                     nav: 5,
-                    content: '<i class="fa fa-book"></i> <br />Contact'
+                    content: '<span><i class="fa fa-book"></i><span class="nav-name">Contact</span></span>'
                 }
             }
         },

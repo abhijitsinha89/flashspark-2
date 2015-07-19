@@ -29,4 +29,32 @@
             transition: .75s all linear;
         }
     }
+    .fs-last-seen-wrapper {
+    margin-top :40px;
+    }
+    .fs-logo {
+        font-size : 8em;
+        top :22%;
+        left : 17%;
+    }
+    .fs-header-name {
+        font-size : 5em;
+        font-family: $header-font;
+        color : #222;
+        z-index : 1;
+        position : absolute;
+        top : 40%;
+        animation : show-hide-show 3s infinite;
+
+        &.fs-header-name-2 {
+         animation : hide-show-hide 3s infinite;
+        }
+    }
+    .fs-home-read-tile {
+        padding :10px;
+    }
+    .fs-home-read-tile-inner { 
+        padding :20px;
+        min-height : 200px;
+    }
 }

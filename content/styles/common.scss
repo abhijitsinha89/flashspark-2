@@ -16,7 +16,7 @@ body {
 
 .fs-logo {
     background: none repeat scroll 0 0 #0091EA;
-    border: 15px solid #0091EA;
+    border: 15pxpx solid #0091EA;
     color: #fff;
     font-size: 6em;
     border-radius : 50%;
@@ -25,27 +25,18 @@ body {
     top: 15px;
     z-index: 6;
     transition: 1s all linear;
-}
-.fs-logo:hover {
-    color:#ffd700;
     cursor: pointer;
-    transition: 1s all linear;
+    animation : bulb-auto-glow 3s infinite;
 }
 
-.fs-header-name {
-    padding : 8% 0 0 2%;
-    font-size : 2.7em;
-    font-family: $header-font;
-    color : #222;
-    z-index : 1;
-}
-.fs-grey-box {
+.fs-top-bar {
     width:100%;
-    position : relative;
-    height:40%;
+    position : absolute;
+    height: 25px;
     background : #F5f5f5;
     top:0;
     left:0;
+    z-index : -1;
 }
 
 .fs-border-left {
@@ -95,4 +86,11 @@ body {
   line-height: 0;
   vertical-align: middle;
   float : left;
+}
+
+.fs-box-shadow {
+    box-shadow: 0 0 5px rgba(0,0,0,.2)
+}
+.fs-section-title {
+    padding-left : 2%
 }

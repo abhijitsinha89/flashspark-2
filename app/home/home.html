@@ -1,17 +1,32 @@
 <section   data-ng-controller="Home as vm"  class="fs-home">
-    <div class="row">
-        
+    <div>
+         <a href="/"><i class="bulb-mybulb fs-logo"></i></a>
+         <div class="fs-header-name">ABHIJIT SINHA</div>
+         <div class="fs-header-name fs-header-name-2">FLASHSPARK</div>
     </div>
-    <div class="row">
-        <div class=" col-md-6 fs-recent-post">
-            <h3>LAST WROTE :</h3>
-            <span class="fs-article-heading">{{vm.journal.title}}</span>
-            <p data-ng-bind-html ="vm.journal.excerpt"></p>
+            
+    <div class="row fs-last-seen-wrapper">
+        <h2>LAST SEEN :</h2>
+        <div class=" col-md-12 fs-recent-post fs-home-read-tile">
+            <div class="fs-box-shadow fs-home-read-tile-inner">
+                <h3>WRITING ON :</h3>
+                <span class="fs-article-heading">{{vm.journal.title}}</span>
+                <p data-ng-bind-html ="vm.journal.excerpt"></p>
+            </div>
         </div>
-        <div class="col-md-6 fs-recent-project">
-            <h3>LAST SEEN WORKING ON :</h3>
-            <span  class="fs-article-heading">{{vm.project.title}}</span>
-            <p data-ng-bind-html="vm.project.excerpt"></p>
+        <div class="col-md-12 fs-recent-project  fs-home-read-tile">
+            <div class="fs-box-shadow fs-home-read-tile-inner">
+                <h3> WORKING ON :</h3>
+                <span  class="fs-article-heading">{{vm.project.title}}</span>
+                <p data-ng-bind-html="vm.project.excerpt"></p>
+            </div>
+        </div>
+         <div class=" col-md-12 fs-recent-post fs-home-read-tile">
+            <div class="fs-box-shadow fs-home-read-tile-inner">
+                <h3>GETTING INSPIRED BY :</h3>
+                <span class="fs-article-heading">{{vm.journal.title}}</span>
+                <p data-ng-bind-html ="vm.journal.excerpt"></p>
+            </div>
         </div>
     </div>
 </section>

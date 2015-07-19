@@ -1,5 +1,5 @@
 <section data-ng-controller="Journal as vm"  class="container-fluid fs-journal">
-     <h1 class="center-block text-center section-title"><i class="fa-1x text-center hidden-sm hidden-xs"></i><br />{{::vm.pageheader}}</h1>
+     <h1 class="section-title"><i class="fa-1x text-center hidden-sm hidden-xs"></i><br />{{::vm.pageheader}}</h1>
     <hr />
     <div  class="row">
         <div class="col-md-8">
@@ -19,7 +19,8 @@
             </ul>
             <div class="fs-journal-pagination text-center" ng-cloak>
                 <span  data-ng-click="vm.pagination(1)"
-                 class="fs-journal-pagination-count  badge fs-all-border">
+                 class="fs-journal-pagination-count  badge fs-all-border"
+                 ng-if="vm.totalPages.length > 1">
                     <i class="fa fa-chevron-left"></i>
                 </span>
                 <span data-ng-repeat="page in vm.totalPages" data-ng-click="vm.pagination(page)"
@@ -27,7 +28,8 @@
                     {{page}}
                 </span>
                 <span  data-ng-click="vm.pagination(vm.pagination.last)"
-                 class="fs-journal-pagination-count  badge fs-all-border">
+                 class="fs-journal-pagination-count  badge fs-all-border"
+                 ng-if="vm.totalPages.length > 1">
                     <i class="fa fa-chevron-right"></i>
                 </span>
             </div>
